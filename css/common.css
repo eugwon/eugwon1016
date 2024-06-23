@@ -1,0 +1,256 @@
+@charset "UTF-8";
+/* CSS Document */
+
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+		a{
+			text-decoration: none;
+		}
+        /* 전체 레이아웃 스타일링 */
+        body {
+            font-family: 'Nanum Gothic', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff;
+        }
+        
+        .container {
+            display: flex;
+            max-width: 1920px; /* 최대 너비 설정 */
+            width: 100%; /* 화면 너비에 맞게 설정 */
+        }
+        
+        /* 사이드 메뉴 스타일링 */
+        .sidebar {
+            z-index: 0;
+            width: 250px;
+            background-color: #ffffff;
+            color: #888888;
+            padding: 20px;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+            transition: transform 0.3s ease; /* 리스트에 마우스 호버 시 이동 효과 */
+        }
+        
+        .sidebar h1 {
+            margin-bottom: 20px;
+            text-align: center;
+            color:#888888;
+        }
+        
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar li {
+            color:#888888;
+            margin-bottom: 10px;
+            transition: margin-left 0.3s ease; /* 마우스 호버 시 이동 효과 */
+        }
+        
+        .sidebar li a {
+            text-decoration: none;
+            color: #888888;
+            font-size: 12px;
+            display: block;
+            padding: 10px;
+            transition: background-color 0.3s ease, padding-left 0.3s ease; /* 리스트에 마우스 호버 시 이동 효과 */
+        }
+        
+        .sidebar li a:hover {
+            padding-left: 30px; /* 마우스 호버 시 좌측으로 이동 */
+        }
+        
+        /* 로고 스타일링 */
+        .sidebar-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+			.category-menu{
+		width: 100%;
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: 300;
+		text-align: center;
+		color: #666666;
+		display: inline-block;
+		margin: 0 auto;
+			}
+
+			.category-menu a {
+		text-decoration: none;
+		color: #666;
+		font-size: 14px;
+		text-align: center;
+	}
+
+		.product-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 30px auto;
+		width: 100%;
+	}
+			.product-info p {
+		color: #666;
+		margin: 0;
+		font-size: 12px;
+	}
+			.sort-options {
+		color: #666;
+		font-size: 12px;
+	}
+        /* 콘텐츠 및 슬라이드 메뉴 스타일링 */
+        .content {
+            flex: 1;
+            margin-left: 250px; /* 사이드바 너비만큼 왼쪽 마진 추가 */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .carousel {
+            max-width: 100%;
+            height: auto;
+            overflow: hidden;
+            width: 100%; /* 캐러셀을 화면 너비에 맞게 설정 */
+        }
+		
+		.custom-carousel {
+			max-width: 100%;
+			top:50px;
+			height: auto;
+			overflow: hidden;
+			width: 100%; /* 캐러셀을 화면 너비에 맞게 설정 */
+		}
+
+        
+        /* GUI 메뉴 스타일링 */
+        .gui-menu {
+            position: absolute;
+            top: 20px;
+            right: 50px;
+            display: flex;
+        }
+        
+        .gui-menu a {
+            text-decoration: none;
+            color: #676767;
+            padding: 10px;
+            margin-left: 10px;
+            font-weight: 400;
+            font-size: 10px;
+        }
+        
+			/* 타이틀 및 상품 썸네일 스타일링 */
+			.product-title {
+		width: 100%;
+		line-height: 16px;
+		text-align: center;
+		color: #666666;
+		display: inline-block;
+		margin: 0 auto;
+		font-size: 13px;
+		font-weight: bold;
+		margin-bottom: 20px;
+		margin-top: 100px;	
+			}
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 한 줄에 3개씩 배열 */
+            gap: 20px;
+            width: 100%; /* 너비를 화면 너비에 맞게 설정 */
+        }
+        
+        .product-item {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-item:hover img {
+            transform: scale(1.1); /* 마우스 호버 시 이미지 확대 */
+        }
+        
+        .caption {
+            position: absolute;
+            display: inline-block;
+            align-items: center;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 10px;
+            text-align: center;
+            z-index: 1;
+        }
+        
+        .product-item:hover .caption {
+            opacity: 1;
+        }
+        
+        .caption .inner {
+            vertical-align: middle;
+            display: inline-block;
+            position: relative;
+            top: 40%;
+        }
+        
+        .caption p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .color-box {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin: 0 5px;
+            border: 1px solid #ccc;
+        }
+        
+        /* 푸터 스타일링 */
+        .footer {
+            background-color: #ffffff;
+            color: #888888;
+			margin-top:100px;
+            text-align: center;
+            padding: 10px 0px 10px 40px;
+            font-size: 12px;
+            width: 100%;
+            position: relative;
+            z-index: 0;
+            border-top: 1px solid #fafafa;
+            bottom: 0;
+        }
+

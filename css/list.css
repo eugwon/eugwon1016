@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/* CSS Document */
+       .product-details .product-title {
+    width: 100%;
+    line-height: 16px;
+    text-align: left;
+    color: #666666;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 10px;	
+        }
+      .product-details .product-price {
+    width: 100%;
+    line-height: 16px;
+    text-align: left;
+    color: #666666;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 10px;
+        }
+      
